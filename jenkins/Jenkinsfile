@@ -3,6 +3,9 @@ pipeline
     agent {
         label 'devServer'
     }
+    tools {
+        maven 'maven'
+    }
 
     stages {
         stage('build') {
@@ -14,7 +17,12 @@ pipeline
     post {
         success {
             echo 'the job is successful'
-            archiveArtifacts artifacts: 'target/*.war', fingerprint: true
+            archiveArtifacts artifacts: 'target/*.war', fingerprint: truepost {
+            success {
+                echo 'the job is successful'
+                archiveArtifacts artifacts: 'target/*.war', fingerprint: true
+            }
+            }
         }
     }
 }
