@@ -10,11 +10,11 @@ pipeline
                 sh 'mvn clean package'
             }
         }
-        post {
-            success {
-                echo 'the job is successful'
-                archiveArtifacts artifacts: 'target/*.war', fingerprint: true
-            }
+    }
+    post {
+        success {
+            echo 'the job is successful'
+            archiveArtifacts artifacts: 'target/*.war', fingerprint: true
         }
     }
 }
