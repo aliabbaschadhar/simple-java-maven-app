@@ -17,7 +17,7 @@ pipeline
     post {
         success {
             echo 'the job is successful'
-            archiveArtifacts artifacts: 'target/*.war', fingerprint: true
+            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
         }
     }
 }
